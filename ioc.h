@@ -453,7 +453,7 @@ namespace ioc
                 resolve_factory_by_name<I>(name_in);
             if (factory)
             {
-                result = factory->create_item();
+                result = std::static_pointer_cast<I>(factory->create_item());
             }
             return result;
         }
